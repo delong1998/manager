@@ -1,9 +1,12 @@
 import logo from './logo.svg';
+import {Button } from 'antd';
+import 'antd/dist/antd.css'
 import './App.css';
 
 function App() {
   return (
     <div className="App">
+      <Button type="primary" >我是一个按钮</Button>
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
