@@ -1,13 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
+import {HashRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
+import App from './App'
+
+import {mainRoutes} from './routes'
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <Router>
+    <Switch >
+      <Route path='/admin' render={routeProps => <App {...routeProps}></App>}></Route>
+      {mainRoutes.map(route =>{
+        return <Route key={route.path} {...route}></Route>
+      })}
+      <Redirect to='/404'></Redirect>
+    </Switch>
+  </Router>,
   document.getElementById('root')
 );
 
