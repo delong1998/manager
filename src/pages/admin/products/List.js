@@ -12,6 +12,11 @@ const dataSource = [
         id: 2,
         name: '海鱼',
         price: 6
+    },
+    {
+        id: 3,
+        name: '鲨鱼',
+        price: 7
     }
 ]
 function List(props) {

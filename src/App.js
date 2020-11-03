@@ -23,6 +23,7 @@ function App() {
             </Route>
           );
         })}
+        <Redirect to={adminRoutes[0].path} from='/admin'></Redirect>
         <Redirect to='/404'></Redirect>
       </Switch>
     </Frame>
