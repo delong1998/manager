@@ -66,6 +66,7 @@ function List(props) {
                 columns={columns}
                 bordered
                 dataSource={dataSource}
+                rowKey='id'
             >
 
             </Table>

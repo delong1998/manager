@@ -1,6 +1,7 @@
 import React from 'react'
 import { Form, Icon, Input, Button, Checkbox, Card } from 'antd';
 import { Link } from 'react-router-dom';
+import {setToken} from '../utils/auth'
 import './login.css'
 
 function Login(props) {
@@ -11,6 +12,7 @@ function Login(props) {
             if (!err) {
                 console.log('Received values of form: ', values);
                 //登陆成功后的跳转页面
+                setToken(values.username);
                 props.history.push('/admin');
             }
         });
