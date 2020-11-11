@@ -3,6 +3,8 @@ import { Form, Icon, Input, Button, Checkbox, Card } from 'antd';
 import { Link } from 'react-router-dom';
 import {setToken} from '../utils/auth'
 import './login.css'
+import { loginApi } from '../services/auth'
+import axios from 'axios'
 
 function Login(props) {
     const { getFieldDecorator } = props.form;
@@ -12,8 +14,20 @@ function Login(props) {
             if (!err) {
                 console.log('Received values of form: ', values);
                 //登陆成功后的跳转页面
+                // axios.get('/api/papers').then((res)=>{
+                //     console.log(111,res)
+                // })
                 setToken(values.username);
                 props.history.push('/admin');
+                loginApi({
+                    username: values.username,
+                    password: values.password,
+                    type: "account"
+                }).then(res =>{
+                    console.log(res);
+                }).catch(err =>{
+                    console.log(err);
+                })
             }
         });
     };

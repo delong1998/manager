@@ -1,6 +1,7 @@
 import React from 'react'
 import { Card, Table, Button, Popconfirm } from 'antd'
 import index from '../dashboard'
+import { listApi } from '../../../services/products'
 
 const dataSource = [
     {
@@ -20,6 +21,13 @@ const dataSource = [
     }
 ]
 function List(props) {
+    const text = () =>{
+        listApi().then(res =>{
+            console.log(res);
+        }).catch(err =>{
+            console.log(err);
+        });
+    }
     const columns = [
         {
             title: '序号',
@@ -41,7 +49,7 @@ function List(props) {
             render: (txt, record, index) => {
                 return (
                     <div>
-                        <Button size='small' type='primary' style={{ marginRight: 10 }}>修改</Button>
+                        <Button size='small' type='primary' style={{ marginRight: 10 }} onClick={text}>修改</Button>
                         <Popconfirm
                             title='确定删除此项'
                             okText='确认'

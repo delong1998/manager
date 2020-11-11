@@ -1,11 +1,14 @@
-import {get, post, del, put} from './auth'
+import {get, post, del, put} from '../utils/request'
 
 /**
  * 获取数据列表
  * @param {} page 
  */
-export function listApi(page = 1){
-    return get('/api/v1/admin/products', {page})
+// export function listApi(page = 1){
+//     return get('/api/papers', {page})
+// }
+export function listApi(){
+    return get('/api/papers')
 }
 
 /**

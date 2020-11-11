@@ -1,5 +1,5 @@
 export function getToken() {
-    return localStorage.getToken('token')
+    return localStorage.getItem('token')
 }
 
 export function setToken(token) {

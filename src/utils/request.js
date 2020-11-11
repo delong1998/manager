@@ -2,7 +2,7 @@ import axios from 'axios'
 import {getToken} from './auth'
 
 const instance = axios.create({
-    baseURL: 'http://localhost:3000',
+    baseURL: '/api',
     timeout: 5000
 })
 
