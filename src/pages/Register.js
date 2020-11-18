@@ -2,7 +2,7 @@ import React from 'react'
 import { Form, Icon, Input, Button, Checkbox, Card, message } from 'antd';
 import { setToken } from '../utils/auth'
 import './login.css'
-import { loginApi } from '../services/auth'
+
 
 function Login(props) {
     const { getFieldDecorator } = props.form;
@@ -16,17 +16,8 @@ function Login(props) {
                 //     console.log(111,res)
                 // })
                 setToken(values.username);
-                message.info("登录成功");
-                props.history.push('/admin');
-                // loginApi({
-                //     username: values.username,
-                //     password: values.password,
-                //     type: "account"
-                // }).then(res => {
-                //     console.log(res);
-                // }).catch(err => {
-                //     console.log(err);
-                // })
+                message.info("注册成功");
+                props.history.push('/login#/login');
             }
         });
     };
@@ -58,18 +49,12 @@ function Login(props) {
                         />,
                     )}
                 </Form.Item>
-                <Form.Item>
-                    {getFieldDecorator('remember', {
-                        valuePropName: 'checked',
-                        initialValue: true,
-                    })(<Checkbox style={{ marginRight: 50 }}>记住我</Checkbox>)}
-                    {/* <a className="register-form-forgot" href="/register">
+                <Button type="primary" htmlType="submit" className="login-form-button" >
                         注册
-                     </a> */}
-                    <Button type="primary" htmlType="submit" className="login-form-button" style={{width:300}}>
-                        登陆
-                    </Button>
-                </Form.Item>
+                </Button>
+                <Button type="primary" href="/login#/login" className="login-form-button" style={{marginLeft:50}}>
+                        返回
+                </Button>
             </Form>
         </Card>
     )

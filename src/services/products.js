@@ -16,7 +16,7 @@ export function listApi(){
  * @param {*} data 
  */
 export function creatApi(data) {
-    return post('/api/v1/admin/products', {data})
+    return post('/api/products', {data})
 }
 
 /**
@@ -25,7 +25,7 @@ export function creatApi(data) {
  * @param {*} data 
  */
 export function updateOne(id, data){
-    return put(`/api/v1/admin/products/${id}`, data)
+    return put(`/api/products/${id}`, data)
 }
 
 /**
@@ -34,5 +34,5 @@ export function updateOne(id, data){
  * @param {*} data 
  */
 export function delOne(id, data){
-    return del(`/api/v1/admin/products/${id}`)
+    return del(`/api/products/${id}`)
 }

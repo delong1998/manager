@@ -1,7 +1,7 @@
 import React from 'react'
 import { Card, Table, Button, Popconfirm } from 'antd'
 import index from '../dashboard'
-import { listApi } from '../../../services/products'
+import {productsList} from '../model/products'
 
 const dataSource = [
     {
@@ -22,11 +22,7 @@ const dataSource = [
 ]
 function List(props) {
     const text = () =>{
-        listApi().then(res =>{
-            console.log(res);
-        }).catch(err =>{
-            console.log(err);
-        });
+
     }
     const columns = [
         {
